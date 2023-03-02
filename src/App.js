@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Desktop from "./components/desktop/Desktop";
+import CardsController from "./store/CardsController";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {initCards} = CardsController
+    const onClickButton = () =>{
+        initCards(8)
+    }
+    return (
+        <div className="App">
+            <button onClick={onClickButton}>init</button>
+            <Desktop/>
+        </div>
+    );
 }
 
 export default App;
