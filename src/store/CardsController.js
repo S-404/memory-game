@@ -3,6 +3,8 @@ import cards from './collections/cards.json'
 
 class CardsController {
     cards = []
+    selected1 = null
+    selected2 = null
 
     constructor() {
         makeAutoObservable(this)
@@ -25,6 +27,33 @@ class CardsController {
     }
     initCards = (quantity) => {
         this.cards = this.getNewCardsCollection(quantity)
+    }
+
+    checkMatch = () => {
+        if (this.selected1 && this.selected2 &&
+            this.selected1.cardId === this.selected2.cardId) {
+            this.selected1.matched = true
+            this.selected2.matched = true
+            return true
+        }
+        return false
+    }
+
+    selectCard = (card) => {
+
+        if (this.selected1 === null) {
+            this.selected1 = card
+            return
+        }
+
+        if (this.selected2 === null) {
+            this.selected2 = card
+        }
+
+    }
+    deselectCards = () => {
+        this.selected1 = null
+        this.selected2 = null
     }
 
 
