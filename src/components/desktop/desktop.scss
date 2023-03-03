@@ -1,0 +1,7 @@
+.desktop{
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .2em;
+  grid-auto-rows: minmax(200px, auto);
+}

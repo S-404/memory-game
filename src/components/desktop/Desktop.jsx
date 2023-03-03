@@ -2,13 +2,13 @@ import React from 'react';
 import Card from "../card/Card";
 import CardsController from "../../store/CardsController";
 import {observer} from "mobx-react-lite";
-
+import './desktop.scss'
 const Desktop = observer(() => {
 
     const {cards} = CardsController
 
     return (
-        <div>
+        <div className='desktop'>
             {cards.map((card) => (
                 <Card
                     key={`card_id${card.cardId}_${Math.random()}`}
