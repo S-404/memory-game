@@ -30,6 +30,9 @@ class CounterController {
     startTimer = () => {
         this.isTimerStarted = true
     }
+    stopTimer = () => {
+        this.isTimerStarted = false
+    }
 }
 
 export default new CounterController()

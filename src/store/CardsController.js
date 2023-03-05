@@ -3,8 +3,7 @@ import cards from './collections/cards.json'
 
 class CardsController {
     cards = []
-    selected1 = null
-    selected2 = null
+    selected = []
 
     constructor() {
         makeAutoObservable(this)
@@ -30,35 +29,39 @@ class CardsController {
     }
 
     checkMatch = () => {
-        if (this.selected1 && this.selected2 &&
-            this.selected1.cardId === this.selected2.cardId) {
-            this.selected1.matched = true
-            this.selected2.matched = true
+        if (this.selected.length === 2 &&
+            this.selected[0].cardId === this.selected[1].cardId) {
+            this.selected[0].matched = true
+            this.selected[1].matched = true
             return true
         }
         return false
+
     }
 
     selectCard = (card) => {
-        if(
-            card === this.selected1 ||
-            card === this.selected2 ||
+        if (
+            this.selected.includes(card) ||
             card.matched
         ) return
 
-        if (this.selected1 === null) {
-            this.selected1 = card
+        if (this.selected.length === 0) {
+            this.selected.push(card)
             return
         }
 
-        if (this.selected2 === null) {
-            this.selected2 = card
+        if (this.selected.length === 1) {
+            this.selected.push(card)
         }
 
     }
     deselectCards = () => {
-        this.selected1 = null
-        this.selected2 = null
+        this.selected.length = 0
+    }
+
+    isCompleted = () => {
+        console.log('isCompleted',this.cards.length,this.cards.filter(card => card.matched).length)
+        return this.cards.length === this.cards.filter(card => card.matched).length
     }
 
 
