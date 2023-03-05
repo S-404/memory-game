@@ -7,7 +7,7 @@ import timeout from "../../utils/timeout";
 import CounterController from "../../store/CounterController";
 const Desktop = observer(() => {
 
-    const {cards,selected,checkMatch,deselectCards,isCompleted} = CardsController
+    const {cards,selected,checkMatch,deselectCards,checkIsCompleted} = CardsController
     const {incrementAttempts, startTimer, stopTimer,  isTimerStarted} = CounterController
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const Desktop = observer(() => {
 
         (async function check() {
             incrementAttempts(checkMatch())
-            if(isCompleted()){
+            if(checkIsCompleted()){
                 stopTimer()
             }
             await timeout(500)

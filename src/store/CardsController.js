@@ -4,7 +4,7 @@ import cards from './collections/cards.json'
 class CardsController {
     cards = []
     selected = []
-
+    isCompleted = false
     constructor() {
         makeAutoObservable(this)
     }
@@ -59,9 +59,10 @@ class CardsController {
         this.selected.length = 0
     }
 
-    isCompleted = () => {
-        console.log('isCompleted',this.cards.length,this.cards.filter(card => card.matched).length)
-        return this.cards.length === this.cards.filter(card => card.matched).length
+    checkIsCompleted = () => {
+        let isCompleted = this.cards.length === this.cards.filter(card => card.matched).length
+        this.isCompleted = isCompleted
+        return isCompleted
     }
 
 
