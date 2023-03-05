@@ -2,6 +2,7 @@ import React, {useEffect, useMemo} from 'react';
 import './card.scss'
 import CardsController from "../../store/CardsController";
 import {observer} from "mobx-react-lite";
+import CounterController from "../../store/CounterController";
 
 const Card = observer(({card}) => {
     const {
@@ -11,6 +12,12 @@ const Card = observer(({card}) => {
         selectCard,
         deselectCards
     } = CardsController
+
+    const {
+        incrementAttempts,
+        startTimer,
+        isTimerStarted,
+    } = CounterController
 
     const clickHandler = () => {
         selectCard(card)
@@ -24,12 +31,27 @@ const Card = observer(({card}) => {
     }, [selected1, selected2])
 
     useEffect(() => {
-        if (selected2 !== null) {
-            if (checkMatch()) {
+        if (selected2 !== card) return
 
-            }
-            deselectCards()
+        if (!isTimerStarted) {
+            startTimer()
         }
+
+        function timeout(delay) {
+            return new Promise(res => setTimeout(res, delay));
+        }
+
+        async function check() {
+            if (selected2 !== null) {
+                let isSuccessful = checkMatch()
+                incrementAttempts(isSuccessful)
+                await timeout(500)
+                deselectCards()
+            }
+        }
+
+        check()
+
     }, [selected2])
 
 

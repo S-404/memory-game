@@ -1,6 +1,7 @@
 import './App.css';
 import Desktop from "./components/desktop/Desktop";
 import CardsController from "./store/CardsController";
+import Counter from "./components/counter/Counter";
 
 function App() {
     const {initCards} = CardsController
@@ -10,6 +11,7 @@ function App() {
     return (
         <div className="App">
             <button onClick={onClickButton}>init</button>
+            <Counter/>
             <Desktop/>
         </div>
     );
