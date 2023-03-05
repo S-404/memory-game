@@ -3,7 +3,8 @@
   background-color: #ffffff;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: .2em;
-  max-width: 880px;
-  grid-auto-rows: minmax(200px, auto);
+  gap: .5em;
+  max-width: 500px;
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-columns: minmax(50px,auto);
 }

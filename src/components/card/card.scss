@@ -9,8 +9,8 @@
 
 .card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   perspective: 1000px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
@@ -23,6 +23,9 @@
   &_selected .card__card-inner,
   &_matched .card__card-inner {
     transform: rotateY(180deg);
+    & .card-inner__card-front{
+      background-color: red;
+    }
   }
 
   .card__card-inner {
@@ -56,6 +59,15 @@
       background-color: #367ee8;
     }
   }
+
+  &_matched .card__card-inner {
+    cursor: default;
+    & .card-inner__card-front{
+      background-color: lightgreen;
+      transition: background-color ease-in .5s;
+    }
+  }
+
 }
 
 
