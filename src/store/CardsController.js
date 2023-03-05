@@ -40,6 +40,11 @@ class CardsController {
     }
 
     selectCard = (card) => {
+        if(
+            card === this.selected1 ||
+            card === this.selected2 ||
+            card.matched
+        ) return
 
         if (this.selected1 === null) {
             this.selected1 = card

@@ -3,6 +3,7 @@ import './card.scss'
 import CardsController from "../../store/CardsController";
 import {observer} from "mobx-react-lite";
 import CounterController from "../../store/CounterController";
+import timeout from "../../utils/timeout";
 
 const Card = observer(({card}) => {
     const {
@@ -23,41 +24,28 @@ const Card = observer(({card}) => {
         selectCard(card)
     }
 
-    const cardClassName = useMemo(() => {
-        let className = 'card'
-        className += card.matched ? ' card_matched' : ''
+    const cardClassMod = useMemo(() => {
+        let className = card.matched ? 'card_matched' : ''
         className += selected1 === card || selected2 === card ? ' card_selected' : ''
         return className
     }, [selected1, selected2])
 
     useEffect(() => {
         if (selected2 !== card) return
-
         if (!isTimerStarted) {
             startTimer()
         }
-
-        function timeout(delay) {
-            return new Promise(res => setTimeout(res, delay));
-        }
-
-        async function check() {
-            if (selected2 !== null) {
-                let isSuccessful = checkMatch()
-                incrementAttempts(isSuccessful)
-                await timeout(500)
-                deselectCards()
-            }
-        }
-
-        check()
-
+        (async function check() {
+            incrementAttempts(checkMatch())
+            await timeout(500)
+            deselectCards()
+        })()
     }, [selected2])
 
 
     return (
         <div
-            className={cardClassName}
+            className={`card ${cardClassMod}`}
             onClick={clickHandler}
         >
             <div className='card__card-inner'>
