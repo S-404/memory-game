@@ -38,12 +38,13 @@ const Card = observer(({card}) => {
             className={cardClassName}
             onClick={clickHandler}
         >
-            {card.cardId}
-            <div>
-                {selected1 === card || selected2 === card ? 'selected' : null}
-            </div>
-            <div>
-                {card.matched ? 'matched' : null}
+            <div className='card__card-inner'>
+                <div className='card-inner__card-front'>
+                    <div className='card-front__img'>
+                        <img src={card?.src} alt={card?.cardId}/>
+                    </div>
+                </div>
+                <div className='card-inner__card-back'/>
             </div>
 
         </div>
