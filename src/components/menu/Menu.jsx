@@ -4,18 +4,19 @@ import {observer} from "mobx-react-lite";
 import CounterController from "../../store/CounterController";
 
 const Menu = observer(() => {
-    const {initCards, isCompleted} = CardsController
-    const {resetCounter} = CounterController
-    const onClickButton = (cardsQty) => {
-        resetCounter()
-        initCards(cardsQty)
-    }
+
+    const {isCompleted} = CardsController
+
     return (
-        <div>
-            <button onClick={()=>onClickButton(4)}>New Easy Game</button>
-            <button onClick={()=>onClickButton(8)}>New Medium Game</button>
-            <button onClick={()=>onClickButton(12)}>New Hard Game</button>
-            {isCompleted ? 'Completed' : null}
+        <div className='menu'>
+            <h1 className='menu__header'>MEMORY GAME</h1>
+            <div className='menu__info'>
+                <MenuNewGameButtons/>
+                <Counter/>
+            </div>
+            <div className='menu__results'>
+                {isCompleted ? <h3>Completed!</h3> : null}
+            </div>
         </div>
     );
 });

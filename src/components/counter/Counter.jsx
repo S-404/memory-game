@@ -21,20 +21,31 @@ const Counter = observer(() => {
         }
     }, TIMER_TICK)
 
-    const formattedTimer = useMemo(()=>{
+    const formattedTimer = useMemo(() => {
         const hourMs = 60000
         const secMs = 1000
-        let min = Math.floor(timer/hourMs)
-        let sec = ((timer%hourMs)/secMs).toFixed(0);
-        return `${min}:${sec.padStart(2,"0")}`
-    },[timer])
+        let min = Math.floor(timer / hourMs)
+        let sec = ((timer % hourMs) / secMs).toFixed(0);
+        return `${min}:${sec.padStart(2, "0")}`
+    }, [timer])
 
     return (
-        <div>
-            <div>{`timer: ${formattedTimer}`}</div>
-            <div>{`attempts: ${attempts}`}</div>
-            <div>{`success: ${successfulAttempts}`}</div>
+        <div className='counter'>
 
+            <div className='counter__index counter__timer'>
+                <label>Timer: </label>
+                <span>{formattedTimer}</span>
+            </div>
+
+            <div className='counter__index counter__attempts'>
+                <label>Attempts: </label>
+                <span>{attempts}</span>
+            </div>
+
+            <div className='counter__index counter__success'>
+                <label>Success: </label>
+                <span>{successfulAttempts}</span>
+            </div>
         </div>
     );
 });
