@@ -25,6 +25,7 @@ class CardsController {
         return this.shuffleCards(part.concat(...part))
     }
     initCards = (quantity) => {
+        this.isCompleted = false
         this.cards = this.getNewCardsCollection(quantity)
     }
 
