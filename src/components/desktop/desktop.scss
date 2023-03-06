@@ -1,6 +1,6 @@
 .desktop{
-  padding: 2em;
-  background-color: #ffffff;
+  padding: 1em;
+  border-radius: var(--border-radius-val);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: .5em;

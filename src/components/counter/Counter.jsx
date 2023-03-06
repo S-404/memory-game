@@ -2,6 +2,7 @@ import React, {useMemo} from 'react';
 import CounterController from "../../store/CounterController";
 import {observer} from "mobx-react-lite";
 import {useInterval} from "../../hooks/useInterval";
+import './counter.scss'
 
 const TIMER_TICK = 1000
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import CardsController from "../../store/CardsController";
 import {observer} from "mobx-react-lite";
-import CounterController from "../../store/CounterController";
+import './menu.scss'
+import Counter from "../counter/Counter";
+import MenuNewGameButtons from "./MenuNewGameButtons";
 
 const Menu = observer(() => {
 

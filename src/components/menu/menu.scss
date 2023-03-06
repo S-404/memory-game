@@ -1,0 +1,38 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .menu__header{
+    margin: 1em;
+  }
+  .menu__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .menu__new-game-buttons {
+      padding: .5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .new-game-buttons__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 140px;
+
+        button {
+          padding: .1em .2em;
+        }
+      }
+    }
+
+  }
+  .menu__results {
+    margin: .5em;
+    min-height: 1.5em;
+    color: green;
+  }
+
+}
