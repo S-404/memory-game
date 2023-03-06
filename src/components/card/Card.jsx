@@ -18,7 +18,7 @@ const Card = observer(({card}) => {
             <div className='card__card-inner'>
                 <div className='card-inner__card-front'>
                     <div className='card-front__img'>
-                        <img src={card?.src} alt={card?.cardId}/>
+                        <img src={card?.image} alt={card?.cardId}/>
                     </div>
                 </div>
                 <div className='card-inner__card-back'/>

@@ -1,87 +1,67 @@
 [
   {
     "cardId": 0,
-    "name": "",
-    "image": ""
+    "name": "react",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
   },
   {
     "cardId": 1,
-    "name": "",
-    "image": ""
+    "name": "redux",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
   },
   {
     "cardId": 2,
-    "name": "",
-    "image": ""
+    "name": "html",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
   },
   {
     "cardId": 3,
-    "name": "",
-    "image": ""
+    "name": "css",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
   },
   {
     "cardId": 4,
-    "name": "",
-    "image": ""
+    "name": "linux",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
   },
   {
     "cardId": 5,
-    "name": "",
-    "image": ""
+    "name": "node",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
   },
   {
     "cardId": 6,
-    "name": "",
-    "image": ""
+    "name": "js",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
   },
   {
     "cardId": 7,
-    "name": "",
-    "image": ""
+    "name": "mysql",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
   },
   {
     "cardId": 8,
-    "name": "",
-    "image": ""
+    "name": "git",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
   },
   {
     "cardId": 9,
-    "name": "",
-    "image": ""
+    "name": "webpack",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg"
   },
   {
     "cardId": 10,
-    "name": "",
-    "image": ""
+    "name": "php",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
   },
   {
     "cardId": 11,
-    "name": "",
-    "image": ""
+    "name": "vscode",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
   },
   {
     "cardId": 12,
-    "name": "",
-    "image": ""
-  },
-  {
-    "cardId": 13,
-    "name": "",
-    "image": ""
-  },
-  {
-    "cardId": 14,
-    "name": "",
-    "image": ""
-  },
-  {
-    "cardId": 15,
-    "name": "",
-    "image": ""
-  },
-  {
-    "cardId": 16,
-    "name": "",
-    "image": ""
+    "name": "ts",
+    "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
   }
 ]
