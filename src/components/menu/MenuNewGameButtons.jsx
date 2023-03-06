@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import CounterController from "../../store/CounterController";
 import CardsController from "../../store/CardsController";
 
@@ -17,6 +17,8 @@ const MenuNewGameButtons = () => {
         resetCounter()
         initCards(cardsQty)
     }
+
+    useEffect(()=>initCards(8),[])
 
     return (
         <div className='menu__new-game-buttons'>
